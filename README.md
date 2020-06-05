@@ -34,11 +34,34 @@ Below summarizes some missing data techniques, although this is not an exhaustiv
 
 ## Simulation
 
-The objective of these simulations, is to compare the sampling distribution from a complete dataset, to the sampling distributions from MCAR, MAR, and MNAR datasets, after applying a missing data technique (listwise deletion, mean imputation, regression imputation, multiple imputation, and maximum likelihood).  
+The objective of these simulations, is to compare the simulated sampling distribution from a complete dataset, to the sampling distributions from MCAR, MAR, and MNAR datasets, after applying a missing data technique (listwise deletion, mean imputation, regression imputation, multiple imputation, and maximum likelihood).  
 
 Below gives an overview of the simulation:
 
 <p align = "center"> <img src="SimulationOverview.jpg" width = 500> </p>
+
+### Step 1: Create a Complete Dataset
+
+In this step, I create N=40 rows, where income ~ Normal(48, 400) and education ~ 8 + 0.17 * income + e, such that e ~ Normal(0, 4),and education is then discretized.  Below is a visual of what a complete dataset might look like.  It makes sense that there is a linear relationship between income and education, because of the way the data was generated.
+
+<p align = "center"> <img src="SimulationData.jpg" width = 500> </p>
+
+### Step 2:  Apply Missingness Mechanism
+
+Using the complete dataset generated in Step 1, I remove 25% of the data (i.e. n=10 rows) under each of the missingness mechanisms: MCAR, MAR, and MNAR.  For MCAR, n rows are randomly selected, and income is from those rows.  For MAR, the n rows where education is the largest is identified, and income is deleted from those rows.  Finally, for MNAR, the n rows where income is the largest is identified, and income is deleted from those rows.  At the end of this step, I have 4 datasets: Complete, MCAR, MAR, and MNAR.
+
+### Step 3:  Apply Missing Data Technique
+
+For each of the 4 datasets, a missing data technique is applied: listwise deletion, mean imputation, regression imputation, multiple imputation, or maximum likelihood.
+
+### Step 4:  Analyze Data
+
+Now that the data has been "cleaned", the data can be analyzed.  In this simulation, and to evaluate the validity of each technique, I chose to look at the sample mean of income.  Recall that income ~ Normal(48, 400), so the expected value of the sample mean of income is 48.  
+
+### Step 5:  Repeat Steps 1 - 4
+
+Steps 1 - 4 are repeated 1,000 times to generated a simulated sampling distribution.  The complete dataset is the "model" sample distribution.  Theoretically, the sampling distribution of the sample mean is 48 and with variance 10, as shown in the figure above.
+
 
 
 

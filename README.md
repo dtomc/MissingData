@@ -10,7 +10,7 @@ Missing data is a common issue in many datasets. If not handled properly, missin
 ### Missing Data Patterns
 There are many missing data patterns.  Below illustrates a few patterns that may appear in a dataset.
 
-<img align = "center" src="MDPattern.jpg" width = 500>
+<p align = "center"> <img src="MDPattern.jpg" width = 500> </p>
 
 ### Missing Mechanisms
 The missing data may occur in one of three ways: Missing Completely at Random (MCAR), Missing at Random (MAR), or Missing Not at Random (MNAR).  It is important to consider which missingness mechanism is at play, prior to applying a missing data technique.

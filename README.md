@@ -8,4 +8,4 @@ Missing data is a common issue in many datasets. If not handled properly, missin
 ### Missing Data Patterns
 There are many missing data patterns.  Below illustrates a few patterns that may appear in a dataset.
 
-<MDPattern.jpg>
+<img src="MDPattern.jpg">

@@ -17,7 +17,7 @@ The missing data may occur in one of three ways: Missing Completely at Random (M
 
 Consider the below dataset where Education and Income was collected.  Education is the fully observed in the dataset (X), Income has some missing values in the dataset (Y), and R is a missing data indicator.
 
-<img src="MMdata.jpg" width = 500>
+<img src="MMdata.jpg" width = 200>
 
 The missigness mechanism is based on the way X, Y, and R are related.
 

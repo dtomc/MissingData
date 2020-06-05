@@ -67,9 +67,19 @@ Steps 1 - 4 are repeated 1,000 times to generated a simulated sampling distribut
 
 Approach for handling missing data:  remove rows wherever data is missing (also known as a complete-case analysis)
 
-<p align = "center"> <img src="LDData.jpg" width = 600> </p>
-<p align = "center"> <img src="LDGraph.jpg" width = 600> </p>
-<p align = "center"> <img src="LDDistributions.jpg" width = 600> </p>
+<p align = "center"> <img src="LDData.jpg" width = 500> </p>
+
+The below figure illustrates Step 3 of the simulation; i.e. how a complete, MCAR, MAR, and MNAR dataset might look after applying listwise deletion.  The sample mean would next will be calculated for each of these datasets.
+
+<p align = "center"> <img src="LDGraph.jpg" width = 500> </p>
+
+The below figure is the 4 simulated sampling distributions for sample mean, after applying listwise deletion for the complete, MCAR, MAR and MNAR datasets.  The complete dataset is shown in red, MCAR in green, MAR in blue, and MNAR in yellow.  As shown, listwise deletion is only yields unbiased results for the MCAR case.
+
+<p align = "center"> <img src="LDDistributions.jpg" width = 500> </p>
 
 
+### Missing Data Technique:  Mean Imputation
 
+Approach for handling missing data:  find the mean of the income for the data that is available and impute those values for where income is missing.  Now there is a imputed dataset, and I'm able to preserve some of the information that I lost with listwise deletion in the education column.
+
+<p align = "center"> <img src="img/MIData.jpg" width = 500> </p>

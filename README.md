@@ -38,13 +38,13 @@ The objective of these simulations, is to compare the simulated sampling distrib
 
 Below gives an overview of the simulation:
 
-<p align = "center"> <img src="SimulationOverview.jpg" width = 500> </p>
+<p align = "center"> <img src="SimulationOverview.jpg" width = 600> </p>
 
 ### Step 1: Create a Complete Dataset
 
 In this step, I create N=40 rows, where income ~ Normal(48, 400) and education ~ 8 + 0.17 * income + e, such that e ~ Normal(0, 4),and education is then discretized.  Below is a visual of what a complete dataset might look like.  It makes sense that there is a linear relationship between income and education, because of the way the data was generated.
 
-<p align = "center"> <img src="SimulationData.jpg" width = 500> </p>
+<p align = "center"> <img src="SimulationData.jpg" width = 400> </p>
 
 ### Step 2:  Apply Missingness Mechanism
 

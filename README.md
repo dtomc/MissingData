@@ -32,3 +32,13 @@ Below summarizes some missing data techniques, although this is not an exhaustiv
 
 <p align = "center"> <img src="MDTechniques.jpg" width = 500> </p>
 
+## Simulation
+
+The objective of these simulations, is to compare the sampling distribution from a complete dataset, to the sampling distributions from MCAR, MAR, and MNAR datasets, after applying a missing data technique (listwise deletion, mean imputation, regression imputation, multiple imputation, and maximum likelihood).  
+
+Below gives an overview of the simulation:
+
+<p align = "center"> <img src="SimulationOverview.jpg" width = 500> </p>
+
+
+

@@ -73,7 +73,7 @@ The below figure illustrates Step 3 of the simulation; i.e. how a complete, MCAR
 
 <p align = "center"> <img src="LDGraph.jpg" width = 500> </p>
 
-The below figure is the 4 simulated sampling distributions for sample mean for income, after applying listwise deletion for the complete, MCAR, MAR and MNAR datasets.  The complete dataset is shown in red, MCAR in green, MAR in blue, and MNAR in yellow.  As shown, listwise deletion is only yields unbiased results for the MCAR case.
+The below figure is the 4 simulated sampling distributions for sample mean for income, after applying listwise deletion for the complete, MCAR, MAR and MNAR datasets.  The complete dataset is shown in red, MCAR in green, MAR in blue, and MNAR in yellow.  As shown, listwise deletion only yields unbiased results for the MCAR case.
 
 <p align = "center"> <img src="LDDistributions.jpg" width = 500> </p>
 
@@ -83,3 +83,11 @@ The below figure is the 4 simulated sampling distributions for sample mean for i
 Approach for handling missing data:  find the mean of the income for the data that is available and impute those values for where income is missing.  Now there is a imputed dataset, and I'm able to preserve some of the information that I lost with listwise deletion in the education column.
 
 <p align = "center"> <img src="img/MIData.jpg" width = 500> </p>
+
+The below figure illustrates how a complete, MCAR, MAR, and MNAR dataset might look after applying mean imputation.  The red points represent imputed data points, where I jittered the points for better visibility.  Notice that the imputed data falls on a horizontal row, because all missing values were replaced with the same value.  The imputed value in the MCAR case should be rougly 48.  However, for the MAR and MNAR cases, the imputed value is lower because the mean is calculated from the complete dataset (i.e. the blue data points). 
+
+<p align = "center"> <img src="img/MIGraphs.jpg" width = 500> </p>
+
+The resulting 4 simulated sampling distributions look similar to those from the listwise deletion method.  Only MCAR yields unbiased results for the mean imputation technique.
+
+<p align = "center"> <img src="img/MIDistributions.jpg" width = 500> </p>

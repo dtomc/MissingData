@@ -69,11 +69,11 @@ Approach for handling missing data:  remove rows wherever data is missing (also 
 
 <p align = "center"> <img src="LDData.jpg" width = 500> </p>
 
-The below figure illustrates Step 3 of the simulation; i.e. how a complete, MCAR, MAR, and MNAR dataset might look after applying listwise deletion.  The sample mean would next will be calculated for each of these datasets.
+The below figure illustrates Step 3 of the simulation; i.e. how a complete, MCAR, MAR, and MNAR dataset might look after applying listwise deletion.  The scatterplot for the MCAR case looks similar to that of the complete case, just with fewer points.  This makes sense because for the MCAR dataset, the data points were randomly removed.  However, with the MAR the scatterplot is truncated with data points missing for higher educated people.  Similarly, data points are missing for people with higher incomes in the MNAR case.  It is reasonable to see that the sample mean for income in the complete and MCAR case will be roughly 48.  However, the sample mean for income will be lower in the MAR and MNAR case. 
 
 <p align = "center"> <img src="LDGraph.jpg" width = 500> </p>
 
-The below figure is the 4 simulated sampling distributions for sample mean, after applying listwise deletion for the complete, MCAR, MAR and MNAR datasets.  The complete dataset is shown in red, MCAR in green, MAR in blue, and MNAR in yellow.  As shown, listwise deletion is only yields unbiased results for the MCAR case.
+The below figure is the 4 simulated sampling distributions for sample mean for income, after applying listwise deletion for the complete, MCAR, MAR and MNAR datasets.  The complete dataset is shown in red, MCAR in green, MAR in blue, and MNAR in yellow.  As shown, listwise deletion is only yields unbiased results for the MCAR case.
 
 <p align = "center"> <img src="LDDistributions.jpg" width = 500> </p>
 

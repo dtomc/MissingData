@@ -108,7 +108,9 @@ Approach for handling missing data:  Similar to the regression imputation, but n
 
 <p align = "center"> <img src="img/MRIData.jpg" width = 500> </p>
 
-<p align = "center"> <img src="img/MRIGraphs.jpg" width = 500> </p>
+<p align = "center"> <img src="img/MRIGraphs1.jpg" width = 500> </p>
+
+<p align = "center"> <img src="img/MRIGraphs2.jpg" width = 500> </p>
 
 <p align = "center"> <img src="img/MRIDistributions.jpg" width = 500> </p>
 

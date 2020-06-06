@@ -20,17 +20,17 @@ The missing data may occur in one of three ways: Missing Completely at Random (M
 
 Consider the below dataset where Education and Income was collected.  Education is the fully observed in the dataset (X), Income has some missing values in the dataset (Y), and R is a missing data indicator.
 
-<p align = "center"> <img src="MMdata.jpg" width = 300> </p>
+<p align = "center"> <img src="img/MMdata.jpg" width = 300> </p>
 
 The missigness mechanism is based on the way X, Y, and R are related, as illustrated in the figure below (the blue line indicates a relationship).  For example, if people with higher incomes tend to not report their income, MNAR would apply because the missigness (R) is dependent on unobserved part of the data (Y).  If people with more education tend not to report their income, MAR would apply because the missigness (R) is dependent on the observed part of the data (X).
 
-<p align = "center"> <img src="MM.jpg" width = 500> </p>
+<p align = "center"> <img src="img/MM.jpg" width = 500> </p>
 
 ### Missing Data Techniques
 
 Below summarizes some missing data techniques, although this is not an exhaustive list.  The effectiveness of some of these techniques are explored in the simulation.
 
-<p align = "center"> <img src="MDTechniques.jpg" width = 500> </p>
+<p align = "center"> <img src="img/MDTechniques.jpg" width = 500> </p>
 
 ## Simulation
 
@@ -38,13 +38,13 @@ The objective of these simulations, is to compare the simulated sampling distrib
 
 Below gives an overview of the simulation:
 
-<p align = "center"> <img src="SimulationOverview.jpg" width = 600> </p>
+<p align = "center"> <img src="img/SimulationOverview.jpg" width = 600> </p>
 
 #### Step 1: Create a Complete Dataset
 
 In this step, I create N=40 rows, where income ~ Normal(48, 400) and education ~ 8 + 0.17 * income + e, such that e ~ Normal(0, 4),and education is then discretized.  Below is a visual of what a complete dataset might look like.  It makes sense that there is a linear relationship between income and education, because of the way the data was generated.
 
-<p align = "center"> <img src="SimulationData.jpg" width = 400> </p>
+<p align = "center"> <img src="img/SimulationData.jpg" width = 400> </p>
 
 #### Step 2:  Apply Missingness Mechanism
 
@@ -67,20 +67,20 @@ Steps 1 - 4 are repeated 1,000 times to generated a simulated sampling distribut
 
 Approach for handling missing data:  remove rows wherever data is missing (also known as a complete-case analysis)
 
-<p align = "center"> <img src="LDData.jpg" width = 500> </p>
+<p align = "center"> <img src="img/LDData.jpg" width = 500> </p>
 
 The below figure illustrates Step 3 of the simulation; i.e. how a complete, MCAR, MAR, and MNAR dataset might look after applying listwise deletion.  The scatterplot for the MCAR case looks similar to that of the complete case, just with fewer points.  This makes sense because for the MCAR dataset, the data points were randomly removed.  However, with the MAR the scatterplot is truncated with data points missing for higher educated people.  Similarly, data points are missing for people with higher incomes in the MNAR case.  It is reasonable to see that the sample mean for income in the complete and MCAR case will be roughly 48.  However, the sample mean for income will be lower in the MAR and MNAR case. 
 
-<p align = "center"> <img src="LDGraph.jpg" width = 500> </p>
+<p align = "center"> <img src="img/LDGraph.jpg" width = 500> </p>
 
 The below figure is the 4 simulated sampling distributions for sample mean for income, after applying listwise deletion for the complete, MCAR, MAR and MNAR datasets.  The complete dataset is shown in red, MCAR in green, MAR in blue, and MNAR in yellow.  As shown, listwise deletion only yields unbiased results for the MCAR case.
 
-<p align = "center"> <img src="LDDistributions.jpg" width = 500> </p>
+<p align = "center"> <img src="img/LDDistributions.jpg" width = 500> </p>
 
 
 ### Missing Data Technique:  Mean Imputation
 
-Approach for handling missing data:  find the mean of the income for the data that is available and impute those values for where income is missing.  Now there is a imputed dataset, and I'm able to preserve some of the information that I lost with listwise deletion in the education column.
+Approach for handling missing data:  Find the mean of the income for the data that is available and impute those values for where income is missing.  Now there is a imputed dataset, and I'm able to preserve some of the information that I lost with listwise deletion in the education column.
 
 <p align = "center"> <img src="img/MIData.jpg" width = 500> </p>
 
@@ -91,3 +91,29 @@ The below figure illustrates how a complete, MCAR, MAR, and MNAR dataset might l
 The resulting 4 simulated sampling distributions look similar to those from the listwise deletion method.  Only MCAR yields unbiased results for the mean imputation technique.
 
 <p align = "center"> <img src="img/MIDistributions.jpg" width = 500> </p>
+
+### Missing Data Technique:  Regression Imputation
+
+Approach for handling missing data:  Build a regression model with the complete part of the dataset, and estimate the income for the rows with missing data.  
+
+<p align = "center"> <img src="img/RIData.jpg" width = 500> </p>
+
+<p align = "center"> <img src="img/RIGraphs.jpg" width = 500> </p>
+
+<p align = "center"> <img src="img/RIDistributions.jpg" width = 500> </p>
+
+### Missing Data Technique:  Multiple Imputation
+
+Approach for handling missing data:  Similar to the regression imputation, but now i’m adding an error term...and creating multiple datasets...and then calculating…
+
+<p align = "center"> <img src="img/MRIData.jpg" width = 500> </p>
+
+<p align = "center"> <img src="img/MRIGraphs.jpg" width = 500> </p>
+
+<p align = "center"> <img src="img/MRIDistributions.jpg" width = 500> </p>
+
+### Missing Data Technique:  Maximum Likelihood
+
+Approach for handling missing data:  
+
+

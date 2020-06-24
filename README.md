@@ -94,17 +94,19 @@ The resulting 4 simulated sampling distributions look similar to those from the 
 
 ### Missing Data Technique:  Regression Imputation
 
-Approach for handling missing data:  Build a regression model with the complete part of the dataset, and estimate the income for the rows with missing data.  
+Approach for handling missing data:  Build a regression model with the complete part of the dataset, and impute using the estimated income. Notice that unlike mean imputation, there is not a single imputed value.   
 
 <p align = "center"> <img src="img/RIData.jpg" width = 500> </p>
 
 <p align = "center"> <img src="img/RIGraphs.jpg" width = 500> </p>
 
+The resulting 4 simulated sampling distributions demonstrates that only MCAR yields unbiased results.
+
 <p align = "center"> <img src="img/RIDistributions.jpg" width = 500> </p>
 
 ### Missing Data Technique:  Multiple Imputation
 
-Approach for handling missing data:  Similar to the regression imputation, but now i’m adding an error term...and creating multiple datasets...and then calculating…
+Approach for handling missing data:  Similar to the regression imputation, I build a regression model but now I'll also include an error term.  In addition, I'll creatie multiple datasets.  and then calculating…
 
 <p align = "center"> <img src="img/MRIData.jpg" width = 500> </p>
 

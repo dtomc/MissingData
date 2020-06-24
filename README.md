@@ -94,9 +94,11 @@ The resulting 4 simulated sampling distributions look similar to those from the 
 
 ### Missing Data Technique:  Regression Imputation
 
-Approach for handling missing data:  Build a regression model with the complete part of the dataset, and impute using the estimated income. Notice that unlike mean imputation, there is not a single imputed value.   
+Approach for handling missing data:  Build a regression model with the complete part of the dataset, and impute using the estimated income.
 
 <p align = "center"> <img src="img/RIData.jpg" width = 500> </p>
+
+Unlike mean imputation, there is not a single imputed value.  The scatterplots below show the imputed values fall on a linear line.
 
 <p align = "center"> <img src="img/RIGraphs.jpg" width = 500> </p>
 
@@ -106,18 +108,24 @@ The resulting 4 simulated sampling distributions demonstrates that only MCAR yie
 
 ### Missing Data Technique:  Multiple Imputation
 
-Approach for handling missing data:  Similar to the regression imputation, I build a regression model but now I'll also include an error term.  In addition, I'll creatie multiple datasets.  and then calculating…
+Approach for handling missing data:  Similar to the regression imputation, I build a regression model but now I'll also include an error term (distributed normal with mean 0 and variance based on MSE of the observed data).  In addition, I'll creatie five datasets.  Because I've included an error term, the imputed values will be different for each datatset.  Next, I'll compute the sample mean for each imputed dataset.  Finally, I'll calculuate a single estimate for sample mean by averaging the five sample means.
 
 <p align = "center"> <img src="img/MRIData.jpg" width = 500> </p>
 
+Unlike regression imputation, there is variation in the imputed values.  
+
 <p align = "center"> <img src="img/MRIGraphs1.jpg" width = 500> </p>
 
+Remeber that the imputation happens five times.
+
 <p align = "center"> <img src="img/MRIGraphs2.jpg" width = 500> </p>
+
+This method illustrates how multiple imputation gives unbiased esimates for both MCAR and MAR.
 
 <p align = "center"> <img src="img/MRIDistributions.jpg" width = 500> </p>
 
 ### Missing Data Technique:  Maximum Likelihood
 
-Approach for handling missing data:  
+Approach for handling missing data: Unlike the previous techniques described, this approach does not aim to make a complete dataset for the analysis.  Instead, this model based approach...
 
 

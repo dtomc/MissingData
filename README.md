@@ -126,6 +126,9 @@ This method illustrates how multiple imputation gives unbiased esimates for both
 
 ### Missing Data Technique:  Maximum Likelihood
 
-Approach for handling missing data: Unlike the previous techniques described, this approach does not aim to make a complete dataset for the analysis.  Instead, this model based approach...
+Approach for handling missing data: Unlike the previous techniques described, this approach does not aim to make a complete dataset for the analysis.  The idea for this technique is that to use the incomplete dataset and apply the EM algorithm, in order to arrive at a mean vector and covariance matrix, which describes the parameters of the distribution of where the data came from.  To reiterate, the goal here is NOT to impute or arrive at a complete dataser, rather it is to estimate the mean directly.
+
+
+
 
 

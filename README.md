@@ -128,11 +128,24 @@ This method illustrates how multiple imputation gives unbiased esimates for both
 
 Approach for handling missing data: Unlike the previous techniques described, this approach does not aim to make a complete dataset for the analysis.  The idea for this technique is that to use the incomplete dataset and apply the EM algorithm, in order to arrive at a mean vector and covariance matrix, which describes the parameters of the distribution of where the data came from.  To reiterate, the goal here is NOT to impute or arrive at a complete dataser, rather it is to estimate the mean directly.
 
-<p align = "center"> <img src="img/EMoverview.jpg" width = 500> </p>
+In step 1, I initialize the mean vector and covariance matrix with just the data that have.  So in this case 16 is the average of all the values in the education column, and 44.8 is the average of the available data in the income column.  The covariance matrix is calculated in a similar way.
+
 <p align = "center"> <img src="img/EMSteps.jpg" width = 500> </p>
+
+Step 2 is the Expectation-step (E-step).  Here I estimate missing values with the formulas shown below, which you can see is a function of the mean vector and covariance matrix elements.  Although it may seem that I am imputing values here, remember, that is not the point for this technique.  This only temporarily gives me a “complete” dataset, which will be used to update the mean vector and covariance matrix.
+
 <p align = "center"> <img src="img/EMStep1.jpg" width = 500> </p>
+
+...which is step THREE, or the M-step. (Maximization)
+
+Step 3 is the Maximization-step (M-step).  With the “complete” dataset, the matrix vector and covariance matrix is recalculated using the maximum likelihood estimates shown here.
+
+Now we can use that updated mean vector and covariance matrix to go back and estimate the missing values in the E-step
+
 <p align = "center"> <img src="img/EMStep2.jpg" width = 500> </p>
 <p align = "center"> <img src="img/EMStep3.jpg" width = 500> </p>
+
+<p align = "center"> <img src="img/EMoverview.jpg" width = 500> </p>
 <p align = "center"> <img src="img/EMdistributions.jpg" width = 500> </p>
 
 
